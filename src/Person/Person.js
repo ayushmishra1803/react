@@ -1,5 +1,5 @@
 import React from "react"
 const person = (props) => {
-    return <p> Hello React ,My name is {props.name}, My age is {props.age} </p>
+    return (<div><p> Hello React ,My name is {props.name}, My age is {props.age} </p><p>{props.children}</p></div>)
 }
 export default person
