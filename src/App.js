@@ -9,7 +9,7 @@ class App extends Component {
     ]
   }
   onClickHandler() {
-    // console.log('Was Clicked');
+
     this.setState({
       persons: [{
         name: "Ayush Mishra", age: 30
@@ -25,8 +25,8 @@ class App extends Component {
         <h1>Hello React Please Be Nice  To Me </h1>
         <button onClick={this.onClickHandler}>OnClick</button>
 
-        <Person name={this.state.persons[0].name} age={this.state.persons[0].age} >My age is 20  </Person>
-        <Person name={this.state.persons[1].name} age={this.state.persons[1].age} >My age is 20  </Person >
+        <Person name={this.state.persons[0].name} age={this.state.persons[0].age} >  </Person>
+        <Person name={this.state.persons[1].name} age={this.state.persons[1].age} >  </Person >
       </div>
     );
   }
