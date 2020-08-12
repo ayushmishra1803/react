@@ -8,17 +8,17 @@ class App extends Component {
     { name: "Mishra", age: 20 },
     ]
   }
-  onClickHandler() {
+  onClickHandler = () => {
 
     this.setState({
-      persons: [{
-        name: "Ayush Mishra", age: 30
-      }, {
-        name: "XYZ", age: 32
-      }]
+      persons: [{ name: "Ayush Mishra", age: 20 },
+      { name: "XYZ", age: 20 },
+      ]
     })
   }
-  render() {
+  render() { persons: [{ name: "Ayush", age: 18 },
+    { name: "Mishra", age: 20 },
+    ]
 
     return (
       <div className="App">
