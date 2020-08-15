@@ -16,9 +16,7 @@ class App extends Component {
       ]
     })
   }
-  render() { persons: [{ name: "Ayush", age: 18 },
-    { name: "Mishra", age: 20 },
-    ]
+  render() {
 
     return (
       <div className="App">
