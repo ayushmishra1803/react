@@ -6,9 +6,10 @@ const app = (props) => {
   const [personState, setStateperson] = useState({
     person: [{
       name: "Ayush", age: 20
-    }, {
-      name: "Mishra", age: 50
-    }]
+    },
+     
+    {name: "Mishra", age: 50
+  }]
   })
   const clickHandler = () => {
     setStateperson({
