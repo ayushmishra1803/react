@@ -29,7 +29,7 @@ class App extends Component {
 	};
 	render() {
 		return (
-			<div>
+			<div className="app">
 				<button
 					onClick={this.switchNameHandler.bind(this, "Ander se aaya o Bhai")}
 				>
