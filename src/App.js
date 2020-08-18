@@ -1,34 +1,32 @@
-import React, { useState } from 'react';
-import Person from "./Person/Person"
+import React, { Component } from 'react';
 import './App.css';
-
-const app = (props) => {
-  const [personState, setStateperson] = useState({
-    person: [{
-      name: "Ayush", age: 20
-    },
-     
-    {name: "Mishra", age: 50
-  }]
-  })
-  const clickHandler = () => {
-    setStateperson({
-      person: [{
-        name: "Changed Name", age: 200
-
-      }, {
-        name: "Changed", age: 1212
-      }]
+import Person from "./Person/Person";
+class App extends Component {
+  state = {
+    person: [{ name: "Ayush", age: 20 },
+    { name: "Mishra", age: 21 },
+    { name: "Chotu", age: 11 }
+    ]
+  }
+  switchNameHandler = (props) => {
+    this.setState({
+      person: [{ name: props, age: 20 },
+      { name: " Ayush Mishra", age: 21 },
+      { name: "Chotu", age: 11 }
+      ]
     })
   }
-  return (
-    <div className="app">
-      <h1 >Hello React UseSate Hooks</h1>
-      <button onClick={clickHandler}> Submit</button>
-      <Person name={personState.person[0].name} age={personState.person[0].age} />
-      <Person name={personState.person[1].name} age={personState.person[1].age} />
-    </div>
-  )
-}
+  render() {
+    return (
+      <div>
+        <button onClick={this.switchNameHandler.bind(this, "Ander se aaya o Bhai")}>Click to Change</button>
+        <Person name={this.state.person[0].name} age={this.state.person[0].age} click={this.switchNameHandler} />
+        <Person name={this.state.person[1].name} age={this.state.person[1].age} />
+        <Person name={this.state.person[2].name} age={this.state.person[2].age} />
+      </div>
+    )
 
-export default app;
+  }
+  
+}
+export default App;
