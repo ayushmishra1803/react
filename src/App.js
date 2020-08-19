@@ -8,6 +8,7 @@ class App extends Component {
 			{ name: "Mishra", age: 21 },
 			{ name: "Chotu", age: 11 },
 		],
+		show: true,
 	};
 	switchNameHandler = (props) => {
 		this.setState({
@@ -27,28 +28,39 @@ class App extends Component {
 			],
 		});
 	};
+	ToogleShow = () => {
+		const show = this.state.show;
+		this.setState({
+			show: !show,
+		});
+	};
 	render() {
+		let showData = null;
+		if (this.state.show) {
+			showData = (
+				<div>
+					<Person
+						name={this.state.person[0].name}
+						age={this.state.person[0].age}
+						click={this.switchNameHandler}
+					/>
+					<Person
+						name={this.state.person[1].name}
+						age={this.state.person[1].age}
+						changed={this.nameChangedHandeler}
+					/>
+					<Person
+						name={this.state.person[2].name}
+						age={this.state.person[2].age}
+					/>
+				</div>
+			);
+		}
 		return (
 			<div className="app">
-				<button
-					onClick={this.switchNameHandler.bind(this, "Ander se aaya o Bhai")}
-				>
-					Click to Change
-				</button>
-				<Person
-					name={this.state.person[0].name}
-					age={this.state.person[0].age}
-					click={this.switchNameHandler}
-				/>
-				<Person
-					name={this.state.person[1].name}
-					age={this.state.person[1].age}
-					changed={this.nameChangedHandeler}
-				/>
-				<Person
-					name={this.state.person[2].name}
-					age={this.state.person[2].age}
-				/>
+				<button onClick={this.ToogleShow}>Click to Change</button>
+
+				{showData}
 			</div>
 		);
 	}
