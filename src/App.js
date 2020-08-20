@@ -34,13 +34,26 @@ class App extends Component {
 			show: !show,
 		});
 	};
+	deletePerson = (index) => {
+		const persons = this.state.person;
+		persons.splice(index, 1),
+			this.setState({
+				person: persons,
+			});
+	};
 	render() {
 		let showData = null;
 		if (this.state.show) {
 			showData = (
 				<div>
-					{this.state.person.map((re) => {
-						return <Person name={re.name} age={re.age} />;
+					{this.state.person.map((re, index) => {
+						return (
+							<Person
+								click={() => this.deletePerson(index)}
+								name={re.name}
+								age={re.age}
+							/>
+						);
 					})}
 				</div>
 			);
