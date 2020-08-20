@@ -39,20 +39,9 @@ class App extends Component {
 		if (this.state.show) {
 			showData = (
 				<div>
-					<Person
-						name={this.state.person[0].name}
-						age={this.state.person[0].age}
-						click={this.switchNameHandler}
-					/>
-					<Person
-						name={this.state.person[1].name}
-						age={this.state.person[1].age}
-						changed={this.nameChangedHandeler}
-					/>
-					<Person
-						name={this.state.person[2].name}
-						age={this.state.person[2].age}
-					/>
+					{this.state.person.map((re) => {
+						return <Person name={re.name} age={re.age} />;
+					})}
 				</div>
 			);
 		}
