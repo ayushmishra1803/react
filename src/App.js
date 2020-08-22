@@ -4,9 +4,9 @@ import Person from "./Person/Person";
 class App extends Component {
 	state = {
 		person: [
-			{ name: "Ayush", age: 20 },
-			{ name: "Mishra", age: 21 },
-			{ name: "Chotu", age: 11 },
+			{ id: "1246531", name: "Ayush", age: 20 },
+			{ id: "12452345", name: "Mishra", age: 21 },
+			{ id: "45242", name: "Chotu", age: 11 },
 		],
 		show: true,
 	};
@@ -42,6 +42,12 @@ class App extends Component {
 			});
 	};
 	render() {
+		const style = {
+			backgroundColor: "green",
+			color: "white",
+			padding: "16px",
+			border: "1px solid blue",
+		};
 		let showData = null;
 		if (this.state.show) {
 			showData = (
@@ -52,15 +58,19 @@ class App extends Component {
 								click={() => this.deletePerson(index)}
 								name={re.name}
 								age={re.age}
+								key={re.id}
 							/>
 						);
 					})}
 				</div>
 			);
+			style.backgroundColor = "red";
 		}
 		return (
 			<div className="app">
-				<button onClick={this.ToogleShow}>Click to Change</button>
+				<button style={style} onClick={this.ToogleShow}>
+					Click to Change
+				</button>
 
 				{showData}
 			</div>
