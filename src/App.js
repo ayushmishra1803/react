@@ -48,6 +48,10 @@ class App extends Component {
 			color: "white",
 			padding: "16px",
 			border: "1px solid blue",
+			':hover':{
+				backgroundColor:"yellow",
+				color:"black"
+			}
 		};
 		const Classes = [];
 		if (this.state.person.length <= 2) {
@@ -73,6 +77,9 @@ class App extends Component {
 				</div>
 			);
 			style.backgroundColor = "red";
+			style[":hover"]={
+				backgroundColor:"lightgreen"
+			}
 		}
 		return (
 			<div className="app">
