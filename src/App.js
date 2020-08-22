@@ -48,6 +48,13 @@ class App extends Component {
 			padding: "16px",
 			border: "1px solid blue",
 		};
+		const Classes = [];
+		if (this.state.person.length <= 2) {
+			Classes.push("red");
+		}
+		if (this.state.person.length <= 1) {
+			Classes.push("bold");
+		}
 		let showData = null;
 		if (this.state.show) {
 			showData = (
@@ -68,6 +75,7 @@ class App extends Component {
 		}
 		return (
 			<div className="app">
+				<p className={Classes.join(" ")}>HEllo Welcome to Dynamic Styling</p>
 				<button style={style} onClick={this.ToogleShow}>
 					Click to Change
 				</button>
