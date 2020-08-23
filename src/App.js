@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import "./App.css";
 import Person from "./Person/Person";
-import Radium from "radium";
+import Radium,{StyleRoot} from "radium";
 class App extends Component {
 	state = {
 		person: [
@@ -82,6 +82,7 @@ class App extends Component {
 			};
 		}
 		return (
+			<StyleRoot>
 			<div className="app">
 				<p className={Classes.join(" ")}>HEllo Welcome to Dynamic Styling</p>
 				<button style={style} onClick={this.ToogleShow}>
@@ -90,6 +91,7 @@ class App extends Component {
 
 				{showData}
 			</div>
+			</StyleRoot>
 		);
 	}
 }
