@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import "./App.css";
 import Person from "./Person/Person";
 import Radium, { StyleRoot } from "radium";
+import Calander from "./Calander/calander"
 class App extends Component {
 	state = {
 		person: [
@@ -93,6 +94,7 @@ class App extends Component {
 					{showData}
 				</div>
 			</StyleRoot>
+			// <Calander/>
 		);
 	}
 }
