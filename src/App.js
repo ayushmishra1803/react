@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-expressions */
 import React, { Component } from "react";
 import "./App.css";
 import Person from "./Person/Person";
@@ -37,10 +38,10 @@ class App extends Component {
 	};
 	deletePerson = (index) => {
 		const persons = this.state.person;
-		persons.splice(index, 1),
-			this.setState({
-				person: persons,
-			});
+		persons.splice(index, 1);
+		this.setState({
+			person: persons,
+		});
 	};
 	render() {
 		const style = {
